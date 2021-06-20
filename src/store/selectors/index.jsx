@@ -1,0 +1,1 @@
+export const isTrue = (state)=>state.auth.isAuth
