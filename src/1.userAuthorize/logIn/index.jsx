@@ -1,29 +1,21 @@
 import {Form,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import firebase from "firebase";
-import { useEffect,useState } from "react";
-// import './style.main.scss'
-// import { useSelector } from 'react-redux';
-// import { isTrue } from '../store/selectors';
+import { useState } from "react";
+import { useDispatch } from 'react-redux';
 
 function LognIn() {
   const [val, setVal] = useState({email:'', password:''})
-  // const isAuth = useSelector(isTrue)
-    
-  useEffect(()=>{
-    const db = firebase.database()
-  })
+
+  const dispatch = useDispatch()
 
   const handleChange = (e)=>{ 
     setVal({...val,[e.target.type]:e.target.value})
   }
 
-  const createAccaunt = ()=>{
-    const {email, password} = val
-    firebase.auth().signInWithEmailAndPassword(email,password)
-    .then(p=>p.additionalUserInfo.isNewUser)
-    .catch(error=>console.log(error))
+  const logIn = ()=>{
+    dispatch({type:'ISAUTH', val})
   }
+ 
 
   return (
     <>
@@ -44,7 +36,7 @@ function LognIn() {
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
-  <Button variant="primary"  onClick={createAccaunt}>
+  <Button variant="primary"  onClick={logIn}>
     Submit
   </Button>
 </Form>

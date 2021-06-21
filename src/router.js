@@ -11,8 +11,10 @@ import { isTrue } from './store/selectors';
 
 const useRouters = ()=>{
     const isAuth = useSelector(isTrue)
-    if(isAuth){
-        <Switch>
+    return(
+    <>
+       {isAuth?
+         <Switch>
             <Route path='/' exact>
                 <Home/>
             </Route>
@@ -28,15 +30,15 @@ const useRouters = ()=>{
             <Route path='/Watches' exact>
                 <Watches/>
             </Route>
-        </Switch>
-    }
-    return(
+        </Switch>:
         <Switch>
             <Route path='/Login' exact>
                 <UserAuth/>
             </Route>
             <Redirect to='/Login'/>
         </Switch>
+       }
+       </>
     )
     }
   export default useRouters;

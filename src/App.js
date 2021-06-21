@@ -13,10 +13,8 @@ function App() {
   
   useEffect(()=>{
     history.push('/')
-    console.log(isAuth);
-  },[isAuth])
+  },[isAuth,history])
 
-  console.log(isAuth);
   
   return (
     <>

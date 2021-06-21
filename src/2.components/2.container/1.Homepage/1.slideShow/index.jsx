@@ -17,6 +17,7 @@ const SlideShow = ()=>{
                         <img
                         className="d-block w-100"
                         src={elem.title}
+                        key={elem.title}
                         alt="First slide"
                         />
                     </Carousel.Item>
