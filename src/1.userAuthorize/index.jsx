@@ -1,10 +1,13 @@
 import SignIn from './signIn'
 import LognIn from './logIn';
+import './style.main.scss'
 const UserAuth = ()=>{
   return (
     <>
-    <SignIn/>
-    <LognIn/>
+    <div className='login'>
+      <SignIn/>
+      <LognIn/>
+    </div>
     </>
   );
   }

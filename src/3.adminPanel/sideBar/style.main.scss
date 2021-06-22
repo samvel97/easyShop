@@ -1,0 +1,18 @@
+.sidebar{
+    width: 20%;
+    height: 80vh;
+    background-color: #212529;
+    color: #FFC107;
+    ul{
+        padding: 0;
+        li{
+            height: 50px;
+            border-bottom: 1px solid rgb(94, 92, 92);
+            list-style-type: none;
+            padding-left: 50px;
+            font-size: 22px;
+            overflow: hidden;
+        }
+    }
+}
+

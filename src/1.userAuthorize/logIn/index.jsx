@@ -1,9 +1,11 @@
 import {Form,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { isTrue} from '../../store/selectors';
 
 function LognIn() {
+  const auth = useSelector(isTrue)
   const [val, setVal] = useState({email:'', password:''})
 
   const dispatch = useDispatch()
@@ -13,7 +15,8 @@ function LognIn() {
   }
 
   const logIn = ()=>{
-    dispatch({type:'ISAUTH', val})
+    dispatch({type:'LOGIN', val})
+    console.log(auth);
   }
  
 
@@ -36,7 +39,7 @@ function LognIn() {
   <Form.Group className="mb-3" controlId="formBasicCheckbox">
     <Form.Check type="checkbox" label="Check me out" />
   </Form.Group>
-  <Button variant="primary"  onClick={logIn}>
+  <Button variant="outline-warning"  onClick={logIn}>
     Submit
   </Button>
 </Form>

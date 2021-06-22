@@ -1,3 +1,11 @@
+a{
+    color: silver;
+    text-decoration: none;
+}
+a:hover{
+    color: black;
+}
+
 .navContact{
     background-color: #E0E0E0;
     height: 30px;
