@@ -1,13 +1,14 @@
 import {Carousel} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FirstSlide from '../../../../assets/images/slideShow.jpg'
+import { nanoid } from 'nanoid';
 
 const SlideShow = ()=>{
     const imgSlide = [
-        {title:FirstSlide},
-        {title:FirstSlide},
-        {title:FirstSlide},
-        {title:FirstSlide},
+        {id:nanoid(), title:FirstSlide},
+        {id:nanoid(), itle:FirstSlide},
+        {id:nanoid(), title:FirstSlide},
+        {id:nanoid(), title:FirstSlide},
     ]
     return(
         <>
@@ -17,7 +18,7 @@ const SlideShow = ()=>{
                         <img
                         className="d-block w-100"
                         src={elem.title}
-                        key={elem.title}
+                        key={elem.id}
                         alt="First slide"
                         />
                     </Carousel.Item>

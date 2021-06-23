@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { titles } from '../../store/selectors';
-import { Link } from 'react-router-dom'; 
+import { NavLink, useHistory } from 'react-router-dom'; 
+import SideBarLists from './sidebarTitels';
 import './style.main.scss'
 const SideBar = ()=>{
     const title = useSelector(titles)
@@ -9,7 +10,7 @@ const SideBar = ()=>{
             <div className='sidebar'>
                 <ul>
                     <li>Admin Panel</li>
-                    {title.map((elem)=><li key={elem.id}><Link to={`/Admin/${elem.title}`}>{elem.title}</Link></li>)}
+                    {title.map((elem)=><SideBarLists title={elem.title} id={elem.id} key={elem.id}/>)}
                 </ul>
             </div>
         </>

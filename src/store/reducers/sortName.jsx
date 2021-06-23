@@ -8,13 +8,21 @@ const initialState = {
         {id:nanoid(), title:'Jewels'},
         {id:nanoid(), title:'Hats'},
         {id:nanoid(), title:'Perfume'},
-    ]
+    ],
+    adminManagement:[{
+        id:null,
+        title:null,
+    }]
 }
 
 export default (state=initialState, action={})=>{
     switch (action.type) {
-        case 'AAA':{
-          
+        case 'ADMIN_MANAGEMENT':{
+          const adminPanel = {
+            id:action.id,
+            title:action.title
+          }
+        return {...state, adminManagement:adminPanel}
     }
   default:return state;
 }

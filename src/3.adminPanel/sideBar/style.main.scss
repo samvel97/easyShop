@@ -2,7 +2,7 @@
     width: 20%;
     height: 80vh;
     background-color: #212529;
-    color: #FFC107;
+    color: silver;
     ul{
         padding: 0;
         li{
@@ -12,6 +12,12 @@
             padding-left: 50px;
             font-size: 22px;
             overflow: hidden;
+            &:first-child{
+                color: goldenrod !important;
+            }
+            &:hover{
+                color:black
+            }
         }
     }
 }

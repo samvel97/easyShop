@@ -1,9 +1,6 @@
 import { Redirect, Route, Switch } from 'react-router-dom'
 import Home from "./2.components/2.container/1.Homepage";
-import Bags from "./2.components/2.container/2.pagesList/bags";
-import Hats from "./2.components/2.container/2.pagesList/hats";
-import Jewels from "./2.components/2.container/2.pagesList/jewels";
-import Watches from "./2.components/2.container/2.pagesList/watches";
+import PageList from './2.components/2.container/2.pagesList';
 import UserAuth from './1.userAuthorize';
 import { useSelector } from 'react-redux';
 import { isTrue } from './store/selectors';
@@ -18,18 +15,10 @@ const useRouters = ()=>{
             <Route path='/' exact>
                 <Home/>
             </Route>
-            <Route path='/Bags' exact>
-                <Bags/>
+            <Route path='/PageList' exact>
+                <PageList/>
             </Route>
-            <Route path='/Hats' exact>
-                <Hats/>
-            </Route>
-            <Route path='/Jewels' exact>
-                <Jewels/>
-            </Route>
-            <Route path='/Watches' exact>
-                <Watches/>
-            </Route><Route path='/Admin' exact>
+            <Route path='/Admin' >
                 <AdminPanel/>
             </Route>
         </Switch>:
