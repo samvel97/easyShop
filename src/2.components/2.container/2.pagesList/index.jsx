@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import { addCard } from '../../../store/selectors';
 const PageList = ()=>{
   const pageList = useSelector(addCard)
+  console.log(pageList);
     return(
         <>
           <Nav fill variant="tabs" defaultActiveKey="/home">

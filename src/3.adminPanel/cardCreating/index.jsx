@@ -11,6 +11,7 @@ const CardCreating = ()=>{
         title:'',
         price:'',
         count:'',
+        img:'',
     })
     const adminManagements = useSelector(adminManagement)
     
@@ -30,6 +31,7 @@ const CardCreating = ()=>{
                 <input type='text' className={css.inputs} value={val.title} onChange={handleSubmit} name='title'/>
                 <input type='text' className={css.inputs} value={val.price} onChange={handleSubmit} name='price'/>
                 <input type='text' className={css.inputs} value={val.count} onChange={handleSubmit} name='count'/>
+                <input type='text' className={css.inputs} value={val.img} onChange={handleSubmit} name='img'/>
                 <Button variant="outline-warning" className={css.creatingbutton} onClick={()=>handleClick()}>Submit</Button>
             </div>
             <TableList/>

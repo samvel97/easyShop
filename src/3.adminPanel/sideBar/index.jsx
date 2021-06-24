@@ -1,6 +1,5 @@
 import { useSelector } from 'react-redux';
 import { titles } from '../../store/selectors';
-import { NavLink, useHistory } from 'react-router-dom'; 
 import SideBarLists from './sidebarTitels';
 import './style.main.scss'
 const SideBar = ()=>{

@@ -12,7 +12,9 @@ function App() {
   const history = useHistory()
   
   useEffect(()=>{
+    if(isAuth){
     history.push('/')
+    }
   },[isAuth,history])
 
   

@@ -23,10 +23,10 @@ const useRouters = ()=>{
             </Route>
         </Switch>:
         <Switch>
-            <Route path='/Login' exact>
+            <Route path='/login' exact>
                 <UserAuth/>
             </Route>
-            <Redirect to='/Login'/>
+            <Redirect to='/login'/>
         </Switch>
        }
        </>

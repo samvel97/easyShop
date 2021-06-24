@@ -1,3 +1,4 @@
+
 const initialState = { 
   card:[],
 }
@@ -9,6 +10,7 @@ export default (state=initialState, action={})=>{
             title:action.val.title,
             price:action.val.price,
             count:action.val.count,
+            img:action.val.img,
         }
        
        return {...state, card:[...state.card, addCard] }

@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 const SlideShow = ()=>{
     const imgSlide = [
         {id:nanoid(), title:FirstSlide},
-        {id:nanoid(), itle:FirstSlide},
+        {id:nanoid(), title:FirstSlide},
         {id:nanoid(), title:FirstSlide},
         {id:nanoid(), title:FirstSlide},
     ]
