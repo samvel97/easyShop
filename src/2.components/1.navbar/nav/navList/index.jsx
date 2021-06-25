@@ -9,7 +9,7 @@ const NavList = ({title, id})=>{
     const dispatch = useDispatch()
     const handleClick = ()=>{
         dispatch({type:'ADMIN_MANAGEMENT', title, id})
-        history.push({pathname:'/PageList'})
+        history.push({pathname:`/PageList/${title}`})
     }
     return(
        <>

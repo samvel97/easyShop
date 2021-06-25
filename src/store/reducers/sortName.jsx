@@ -1,14 +1,4 @@
-import { nanoid } from "nanoid"
-
-
 const initialState = {
-    titles:[
-        {id:nanoid(), title:'Watches'},
-        {id:nanoid(), title:'Bags'},
-        {id:nanoid(), title:'Jewels'},
-        {id:nanoid(), title:'Hats'},
-        {id:nanoid(), title:'Perfume'},
-    ],
     adminManagement:[{
         id:null,
         title:null,

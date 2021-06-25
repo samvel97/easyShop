@@ -9,13 +9,14 @@ const NavBar = ()=>{
     return(
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixing">
   <Container>
-  <Navbar.Brand><NavLink to='Admin'>React-Bootstrap</NavLink></Navbar.Brand>
+  <Navbar.Brand><NavLink to='/'>React-Bootstrap</NavLink></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
       <NavTool/>
     <Nav>
       <Search/>
       <NavLink to=''>Favorites</NavLink>
+      <NavLink to='/Admin'>Admin</NavLink>
       <NavLink to=''>Busket</NavLink>
     </Nav>
   </Navbar.Collapse>

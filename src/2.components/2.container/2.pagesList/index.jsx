@@ -2,10 +2,9 @@ import {Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Pages from './pages';
 import { useSelector } from 'react-redux';
-import { addCard } from '../../../store/selectors';
+import { titles } from '../../../store/selectors';
 const PageList = ()=>{
-  const pageList = useSelector(addCard)
-  console.log(pageList);
+  const data = useSelector(titles)
     return(
         <>
           <Nav fill variant="tabs" defaultActiveKey="/home">
@@ -24,8 +23,7 @@ const PageList = ()=>{
               </Nav.Link>
             </Nav.Item>
           </Nav>
-          {pageList.map((elem)=><Pages title={elem.title} price={elem.price} count={elem.count}/>)
-          }
+          {data.map((elem)=>elem.card.map((el)=><Pages title={el.title} price={el.price} count={el.count}/>))}
         </>
     )
 }

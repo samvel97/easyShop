@@ -3,9 +3,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import css from './style.module.scss'
 import ArchiveList from './dataIntheList';
 import { useSelector } from 'react-redux';
-import { addCard } from '../../store/selectors';
+import { titles } from '../../store/selectors';
 const TableList = ()=>{
-    const data = useSelector(addCard)
+    const data = useSelector(titles)
     return(
         <Table striped bordered hover variant="dark" className={css.table}>
             <thead>
@@ -16,7 +16,7 @@ const TableList = ()=>{
                 <th>Count</th>
                 </tr>
             </thead>
-            {data.map((elem)=><ArchiveList title={elem.title} price={elem.price} count={elem.count} key={elem.count}/>)}
+            {data.map((elem)=>elem.card.map((el)=><ArchiveList title={el.title} price={el.price} count={el.count} key={el.count}/>))}
         </Table>
     )
 }

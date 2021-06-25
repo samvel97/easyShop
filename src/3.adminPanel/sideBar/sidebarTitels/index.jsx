@@ -7,7 +7,7 @@ const SideBarLists = ({title,id})=>{
 
     const handleClick = ()=>{
         dispatch({type:'ADMIN_MANAGEMENT', title, id})
-        history.push({pathname:'/Admin/add'})
+        history.push({pathname:`/Admin/${title}`})
     }
     return(
         <>

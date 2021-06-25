@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { adminManagement } from "../../../../store/selectors";
-const Pages = ({title, price, count,img})=>{
+const Pages = ({title, price, count})=>{
     const adminManagements = useSelector(adminManagement)
     return(
         <>
@@ -8,7 +8,6 @@ const Pages = ({title, price, count,img})=>{
           <div>{title}</div>
           <div>{price}</div>
           <div>{count}</div>
-          <img src={img}/>
         </>
     )
 }

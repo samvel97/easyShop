@@ -2,15 +2,22 @@ import { Route, Switch } from 'react-router-dom'
 import SideBar from "./sideBar";
 import CardCreating from "./cardCreating";
 import './style.main.scss'
+import { useSelector } from 'react-redux';
+import { titles } from '../store/selectors';
 
 
 const AdminPanel = ()=>{
+    const pageNames = useSelector(titles)
     return(
         <>
             <div className='adminPanel'>
                 <SideBar/>
                 <Switch>
-                    <Route path='/Admin/add'  component={CardCreating} />
+                    {pageNames.map((elem)=>
+                            <Route path={`/Admin/${elem.title}`}>
+                                <CardCreating id={elem.id}/>
+                            </Route>
+                        )}
                 </Switch>
             </div>
         </>

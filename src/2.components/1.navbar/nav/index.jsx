@@ -1,8 +1,8 @@
 import {Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector } from 'react-redux';
-import { titles } from '../../../store/selectors';
 import NavList from './navList';
+import { titles } from '../../../store/selectors';
 
 const NavTool = ()=>{
     const title = useSelector(titles)
