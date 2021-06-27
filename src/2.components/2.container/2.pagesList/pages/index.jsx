@@ -1,13 +1,20 @@
-import { useSelector } from "react-redux";
-import { adminManagement } from "../../../../store/selectors";
-const Pages = ({title, price, count})=>{
-    const adminManagements = useSelector(adminManagement)
+import {Card,Button} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import css from './style.module.scss'
+const Pages = ({title})=>{
     return(
         <>
-          <hi>{adminManagements.title}</hi>
-          <div>{title}</div>
-          <div>{price}</div>
-          <div>{count}</div>
+          <Card style={{ width: '18rem'}} className='col-md-4'>
+        <Card.Img variant="top" src="holder.js/100px180" />
+            <Card.Body>
+              <Card.Title>{title}</Card.Title>
+              <Card.Text>
+                Some quick example text to build on the card title and make up the bulk of
+                the card's content.
+              </Card.Text>
+              <Button variant="primary">add to buscket</Button>
+            </Card.Body>
+        </Card>
         </>
     )
 }

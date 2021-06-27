@@ -19,7 +19,7 @@ const useRouters = ()=>{
             
             {title.map((elem)=>
                 <Route path={`/PageList/${elem.title}`} exact>
-                    <PageList/>
+                    <PageList title={elem.title} id={elem.id} key={elem.id} card={elem.card}/>
                 </Route>
                 )}
             

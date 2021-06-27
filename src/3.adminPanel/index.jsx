@@ -15,7 +15,7 @@ const AdminPanel = ()=>{
                 <Switch>
                     {pageNames.map((elem)=>
                             <Route path={`/Admin/${elem.title}`}>
-                                <CardCreating id={elem.id}/>
+                                <CardCreating id={elem.id} title={elem.title} card={elem.card} key={elem.id}/>
                             </Route>
                         )}
                 </Switch>
