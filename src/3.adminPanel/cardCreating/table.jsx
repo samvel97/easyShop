@@ -9,13 +9,13 @@ const TableList = ({card})=>{
         <Table striped bordered hover variant="dark" className={css.table}>
             <thead>
                 <tr>
-                <th>#</th>
+                <th>Order id/Total count - {card.length}</th>
                 <th>First Name</th>
                 <th>Price</th>
-                <th>Count</th>
+                <th>Item Count</th>
                 </tr>
             </thead>
-            {card.map((el)=><ArchiveList title={el.title} price={el.price} count={el.count} key={el.count}/>)}
+            {card.map((el)=><ArchiveList title={el.title} price={el.price} count={el.count} key={el.count} id={el.id}/>)}
         </Table>
     )
 }

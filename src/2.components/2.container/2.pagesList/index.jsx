@@ -3,9 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Pages from './pages';
 import { useSelector } from 'react-redux';
 import { titles } from '../../../store/selectors';
-import style from './style.module.scss'
+import './style.scss'
 const PageList = ({title, card})=>{
   const data = useSelector(titles)
+
+  
     return(
         <>
         <h1>{title} Collection</h1>
@@ -23,8 +25,8 @@ const PageList = ({title, card})=>{
               <Nav.Link eventKey="link-4" >New</Nav.Link>
             </Nav.Item>
           </Nav>
-          <div className='row'>
-            {card.map((el)=><Pages title={el.title} price={el.price} count={el.count}/>)}
+          <div className='row block'>
+            {card.map((el)=><Pages title={el.title} price={el.price} count={el.count} img={el.img} id={el.id} favorite={el.favorite}/>)}
           </div>
         </>
     )

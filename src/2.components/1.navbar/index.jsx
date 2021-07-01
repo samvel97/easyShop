@@ -9,7 +9,7 @@ const NavBar = ()=>{
     return(
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" className="fixing">
   <Container>
-  <Navbar.Brand><NavLink to='/'>React-Bootstrap</NavLink></Navbar.Brand>
+  <Navbar.Brand><NavLink to='/'>Easy-Shop</NavLink></Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
       <NavTool/>

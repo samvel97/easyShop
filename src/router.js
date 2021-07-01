@@ -11,7 +11,7 @@ const useRouters = ()=>{
     const title = useSelector(titles)
     return(
     <>
-       {!isAuth?
+       {isAuth?
          <Switch>
             <Route path='/' exact>
                 <Home/>
