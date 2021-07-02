@@ -29,13 +29,14 @@ export default (state=initialState, action={})=>{
       }))
       return {...state, sorting:checked}
     }
-    case 'IS_FAVORITE':{
-      const favorite = state.titles.card.map((elem)=>({
-        ...elem,
-        favorite:action.id === elem.id?!elem.favorite:elem.favorite
-      }))
-      return {...state, titles:[...state.titles, ]}
-    }
+    // case 'IS_FAVORITE':{
+    //   const favorite = state.titles.map((elem)=>({
+    //     ...elem,
+    //     ...elem.card,
+    //     favorite:action.id === elem.card.id ?!elem.card.favorite:elem.card.favorite
+    //   }))
+    //   return {...state, titles:[...state.titles, favorite]}
+    // }
     case 'ADD_CARD':{
        const addCard = {
           id:id,

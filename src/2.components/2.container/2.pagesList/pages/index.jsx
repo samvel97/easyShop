@@ -2,12 +2,20 @@ import {Card,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import css from './style.module.scss'
 import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 const Pages = ({title, img, id, favorite})=>{
-  const dispatch = useDispatch()
+  const [liked, setLiked] = useState(favorite)
+
+  // const dispatch = useDispatch()
+
+  // const isFavorite = (e)=>{
+  //   dispatch({type:'IS_FAVORITE', id})
+  // }
+
+  // console.log(favorite);
   const isFavorite = ()=>{
-    dispatch({type:'IS_FAVORITE', id})
+    setLiked(prevliked => !prevliked);
   }
-  console.log(favorite);
     return(
         <>
           <Card style={{ width: '18rem'}} className={css.card}>
@@ -21,8 +29,8 @@ const Pages = ({title, img, id, favorite})=>{
               <div className={css.buttons}>
                 <Button variant="outline-warning">add to buscket</Button>
                 <div>
-                  {favorite?
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16" onClick={()=>isFavorite(id)}>
+                  {liked?
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bookmark-check-fill" viewBox="0 0 16 16" onClick={()=>isFavorite(id)}>
                   <path fill-rule="evenodd" d="M2 15.5V2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.74.439L8 13.069l-5.26 2.87A.5.5 0 0 1 2 15.5zm8.854-9.646a.5.5 0 0 0-.708-.708L7.5 7.793 6.354 6.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
                 </svg>
                   :
