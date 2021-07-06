@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import {Form,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
@@ -15,7 +16,9 @@ function SignIn() {
 
   const createAccaunt = (e)=>{
     e.preventDefault()
-    dispatch({type:'ISAUTH',val})
+    firebase.auth().createUserWithEmailAndPassword(val.email,val.password)
+            .then(res=>(dispatch({type:'ISAUTH'})))
+    
   }
    
   

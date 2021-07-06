@@ -1,3 +1,4 @@
+import firebase from "firebase";
 import {Form,Button} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useState } from "react";
@@ -15,8 +16,9 @@ function LognIn() {
   }
 
   const logIn = ()=>{
-    dispatch({type:'LOGIN', val})
-    console.log(auth);
+    firebase.auth().signInWithEmailAndPassword(val.email,val.password)
+          .then(res=>(dispatch({type:'LOGIN'})))
+          .catch(res=>(val.email.length === 0 && val.password.length === 0?alert('Need to fill in the line!!!'):alert('Something gone wrong')))
   }
  
 
