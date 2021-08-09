@@ -17,7 +17,7 @@ function LognIn() {
 
   const logIn = ()=>{
     firebase.auth().signInWithEmailAndPassword(val.email,val.password)
-          .then(res=>(dispatch({type:'LOGIN'})))
+          .then(res=>(dispatch({type:'ISAUTH'})))
           .catch(res=>(val.email.length === 0 && val.password.length === 0?alert('Need to fill in the line!!!'):alert('Something gone wrong')))
   }
  

@@ -2,13 +2,19 @@ import SignIn from './signIn'
 import LognIn from './logIn';
 import './style.main.scss'
 import { GoogleLogin } from 'react-google-login';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { users } from '../store/selectors';
 
 const UserAuth = ()=>{
   const dispatch = useDispatch()
+  const user = useSelector(users)
 
   const responseGoogle = (response) => {
+    const promise1 = new Promise((resolve, reject) => {
     dispatch({type:'GGL_AUTH', response})
+        resolve(user);
+    });
+    promise1.then(data=>console.log(data))
   }
 
   return (

@@ -13,12 +13,10 @@ function SignIn() {
   const handleChange = (e)=>{ 
     setVal({...val,[e.target.type]:e.target.value})
   }
-
   const createAccaunt = (e)=>{
-    e.preventDefault()
     firebase.auth().createUserWithEmailAndPassword(val.email,val.password)
             .then(res=>(dispatch({type:'ISAUTH'})))
-    
+            .catch(res=>(val.email.length === 0 && val.password.length === 0?alert('Need to fill in the line!!!'):alert('Something gone wrong')))
   }
    
   
